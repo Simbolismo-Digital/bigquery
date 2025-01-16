@@ -1,5 +1,7 @@
 # Bigquery
 
+https://hex.pm/packages/bigquery
+
 ## Run
 
 .env must contain GOOGLE_BIGQUERY_CREDENTIALS (which is a json with the credentials for goth, exported from the google panel)
