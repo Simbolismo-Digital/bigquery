@@ -7,9 +7,7 @@ defmodule Bigquery.Application do
 
   @impl true
   def start(_type, _args) do
-    credentials = Application.get_env(:goth, :google_bigquery_credentials)
-    children = [{Goth, name: Cashout.Goth, source: {:service_account, credentials, []}}]
-
-    Supervisor.start_link(children, strategy: :one_for_one, name: Bigquery.Supervisor)
+    # Start the Bigquery Supervisor, which will handle starting Goth
+    Supervisor.start_link([{Bigquery.Supervisor, []}], strategy: :one_for_one, name: Bigquery.Application)
   end
 end

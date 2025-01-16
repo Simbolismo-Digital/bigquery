@@ -23,9 +23,32 @@ mix.exs
   defp deps do
     [
         ...
-      {:bigquery, "~> 0.1.0"},
+      {:bigquery, "~> 0.0.1"},
       ...
     ]
+  end
+
+  # if you are trying this project stand alone uncomment mod
+  def application do
+    [
+      # mod: {Bigquery.Application, []},
+      extra_applications: [:logger]
+    ]
+  end
+
+  # if you are trying to run as a dep add this
+  children =
+      [
+        ...
+      ] ++ applications(Application.get_env(:your_app, :env))
+
+  def applications(:test) do
+    []
+  end
+
+  # :dev || :prod
+  def applications(_) do
+    [{Bigquery.Supervisor, []}]
   end
 ```
 

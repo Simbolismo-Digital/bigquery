@@ -1,6 +1,10 @@
 defmodule Bigquery do
   @moduledoc """
-  Repo for BigQuery
+  Bigquery API:
+    `query_response` brings the query in json
+    `query_lake` brings the query as raw QueryResponse
+
+    you can use the same query from the web console
   """
   def query_response(query) do
     query_lake(query)
