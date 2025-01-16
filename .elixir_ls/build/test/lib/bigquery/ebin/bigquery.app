@@ -1,0 +1,11 @@
+{application,bigquery,
+             [{config_mtime,1736988072},
+              {optional_applications,[]},
+              {applications,[kernel,stdlib,elixir,logger,google_api_big_query,
+                             goth,jason]},
+              {description,"bigquery"},
+              {modules,['Elixir.Bigquery','Elixir.Bigquery.Application',
+                        'Elixir.Bigquery.Response']},
+              {registered,[]},
+              {vsn,"0.0.1"},
+              {mod,{'Elixir.Bigquery.Application',[]}}]}.
